@@ -1,0 +1,674 @@
+.skill-box {
+  opacity: 0;
+    animation: none;
+}
+
+.skill-box.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+#skills {
+  margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.skills-grid-modern {
+  display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.skill-box {
+  background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    grid-column: span 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-box::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.skill-box:nth-child(1)::before {
+  background: var(--cyan);
+}
+
+.skill-box:nth-child(2)::before {
+  background: var(--yellow);
+}
+
+.skill-box:nth-child(3)::before {
+  background: var(--pink);
+}
+
+.skill-box:nth-child(4)::before {
+  background: var(--accent);
+}
+
+.skill-box:nth-child(5)::before {
+  background: var(--cyan);
+}
+
+.skill-box:nth-child(6)::before {
+  background: var(--pink);
+}
+
+.skill-box:nth-child(7)::before {
+  background: var(--yellow);
+}
+
+.skill-box:nth-child(8)::before {
+  background: var(--pink);
+}
+
+.skill-box:nth-child(7),
+.skill-box:nth-child(8) {
+  grid-column: span 3;
+}
+
+.skill-box:hover {
+  transform: translateY(-2px);
+    box-shadow: 0 0 0 var(--border);
+}
+
+.skill-box-header {
+  display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+}
+
+.skill-icon-large {
+  font-size: 3rem;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.skill-box:nth-child(1) .skill-icon-large {
+  color: var(--cyan);
+}
+
+.skill-box:nth-child(2) .skill-icon-large {
+  color: var(--yellow);
+}
+
+.skill-box:nth-child(3) .skill-icon-large {
+  color: var(--pink);
+}
+
+.skill-box:nth-child(4) .skill-icon-large {
+  color: var(--accent);
+}
+
+.skill-box:nth-child(5) .skill-icon-large {
+  color: var(--cyan);
+}
+
+.skill-box:nth-child(6) .skill-icon-large {
+  color: var(--accent);
+}
+
+.skill-box:nth-child(7) .skill-icon-large {
+  color: var(--yellow);
+}
+
+.skill-box:nth-child(8) .skill-icon-large {
+  color: var(--pink);
+}
+
+.skill-box:hover .skill-icon-large {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.skill-box-title {
+  font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.skill-box .tech-tags {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-tags {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.skill-box .tag {
+  display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--pill-border, rgba(255, 255, 255, 0.16));
+    background: var(--pill-bg, rgba(255, 255, 255, 0.06));
+    color: var(--pill-fg, #e5e7eb);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+    cursor: default;
+    position: relative;
+    box-shadow: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+}
+
+.skill-box .tag {
+  font-family: var(--font-skills);
+    font-weight: 600;
+}
+
+.skill-box .tag:hover {
+  transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: var(--pill-bg-hover, var(--pill-bg));
+}
+
+.skill-box .tag i {
+  font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.skill-box .tag:hover i {
+  transform: scale(1.1);
+}
+
+.tag--html {
+  --pill-bg: rgba(185, 92, 31, 0.16);
+    --pill-fg: #f4b891;
+    --pill-border: rgba(185, 92, 31, 0.42);
+    --pill-bg-hover: rgba(185, 92, 31, 0.28);
+}
+
+.tag--css {
+  --pill-bg: rgba(29, 78, 216, 0.16);
+    --pill-fg: #96aff8;
+    --pill-border: rgba(29, 78, 216, 0.42);
+    --pill-bg-hover: rgba(29, 78, 216, 0.28);
+}
+
+.tag--js {
+  --pill-bg: rgba(146, 114, 12, 0.16);
+    --pill-fg: #fdd34f;
+    --pill-border: rgba(146, 114, 12, 0.42);
+    --pill-bg-hover: rgba(146, 114, 12, 0.28);
+}
+
+.tag--react {
+  --pill-bg: rgba(14, 116, 144, 0.16);
+    --pill-fg: #51d6fa;
+    --pill-border: rgba(14, 116, 144, 0.42);
+    --pill-bg-hover: rgba(14, 116, 144, 0.28);
+}
+
+.tag--tailwind {
+  --pill-bg: rgba(15, 118, 110, 0.16);
+    --pill-fg: #3ff4e6;
+    --pill-border: rgba(15, 118, 110, 0.42);
+    --pill-bg-hover: rgba(15, 118, 110, 0.28);
+}
+
+.tag--java {
+  --pill-bg: rgba(185, 28, 28, 0.16);
+    --pill-fg: #f68d8d;
+    --pill-border: rgba(185, 28, 28, 0.42);
+    --pill-bg-hover: rgba(185, 28, 28, 0.28);
+}
+
+.tag--python {
+  --pill-bg: rgba(67, 56, 202, 0.16);
+    --pill-fg: #a7a2ec;
+    --pill-border: rgba(67, 56, 202, 0.42);
+    --pill-bg-hover: rgba(67, 56, 202, 0.28);
+}
+
+.tag--cpp {
+  --pill-bg: rgba(109, 40, 217, 0.16);
+    --pill-fg: #bd9af4;
+    --pill-border: rgba(109, 40, 217, 0.42);
+    --pill-bg-hover: rgba(109, 40, 217, 0.28);
+}
+
+.tag--c {
+  --pill-bg: rgba(126, 34, 206, 0.16);
+    --pill-fg: #ca99f5;
+    --pill-border: rgba(126, 34, 206, 0.42);
+    --pill-bg-hover: rgba(126, 34, 206, 0.28);
+}
+
+.tag--mongodb {
+  --pill-bg: rgba(21, 128, 61, 0.16);
+    --pill-fg: #54ef8e;
+    --pill-border: rgba(21, 128, 61, 0.42);
+    --pill-bg-hover: rgba(21, 128, 61, 0.28);
+}
+
+.tag--sql {
+  --pill-bg: rgba(162, 28, 175, 0.16);
+    --pill-fg: #ea85f4;
+    --pill-border: rgba(162, 28, 175, 0.42);
+    --pill-bg-hover: rgba(162, 28, 175, 0.28);
+}
+
+.tag--vscode {
+  --pill-bg: rgba(3, 105, 161, 0.16);
+    --pill-fg: #52c2ff;
+    --pill-border: rgba(3, 105, 161, 0.42);
+    --pill-bg-hover: rgba(3, 105, 161, 0.28);
+}
+
+.tag--git {
+  --pill-bg: rgba(190, 18, 60, 0.16);
+    --pill-fg: #fc829f;
+    --pill-border: rgba(190, 18, 60, 0.42);
+    --pill-bg-hover: rgba(190, 18, 60, 0.28);
+}
+
+.tag--github {
+  --pill-bg: rgba(37, 99, 235, 0.16);
+    --pill-fg: #91b3fd;
+    --pill-border: rgba(37, 99, 235, 0.42);
+    --pill-bg-hover: rgba(37, 99, 235, 0.28);
+}
+
+.tag--figma {
+  --pill-bg: rgba(190, 24, 93, 0.16);
+    --pill-fg: #f88bb8;
+    --pill-border: rgba(190, 24, 93, 0.42);
+    --pill-bg-hover: rgba(190, 24, 93, 0.28);
+}
+
+.tag--sketch {
+  --pill-bg: rgba(161, 98, 7, 0.16);
+    --pill-fg: #ffba56;
+    --pill-border: rgba(161, 98, 7, 0.42);
+    --pill-bg-hover: rgba(161, 98, 7, 0.28);
+}
+
+.tag--msoffice {
+  --pill-bg: rgba(4, 120, 87, 0.16);
+    --pill-fg: #2affc3;
+    --pill-border: rgba(4, 120, 87, 0.42);
+    --pill-bg-hover: rgba(4, 120, 87, 0.28);
+}
+
+.tag--shopify {
+  --pill-bg: rgba(77, 124, 15, 0.16);
+    --pill-fg: #a8f543;
+    --pill-border: rgba(77, 124, 15, 0.42);
+    --pill-bg-hover: rgba(77, 124, 15, 0.28);
+}
+
+.tag--wireframing {
+  --pill-bg: rgba(180, 83, 9, 0.16);
+    --pill-fg: #ffab6b;
+    --pill-border: rgba(180, 83, 9, 0.42);
+    --pill-bg-hover: rgba(180, 83, 9, 0.28);
+}
+
+.tag--prototyping {
+  --pill-bg: rgba(5, 150, 105, 0.16);
+    --pill-fg: #49ffc7;
+    --pill-border: rgba(5, 150, 105, 0.42);
+    --pill-bg-hover: rgba(5, 150, 105, 0.28);
+}
+
+.tag--userresearch {
+  --pill-bg: rgba(147, 51, 234, 0.16);
+    --pill-fg: #c992fb;
+    --pill-border: rgba(147, 51, 234, 0.42);
+    --pill-bg-hover: rgba(147, 51, 234, 0.28);
+}
+
+.tag--visualdesign {
+  --pill-bg: rgba(219, 39, 119, 0.16);
+    --pill-fg: #f599c2;
+    --pill-border: rgba(219, 39, 119, 0.42);
+    --pill-bg-hover: rgba(219, 39, 119, 0.28);
+}
+
+.tag--accessibility {
+  --pill-bg: rgba(20, 184, 166, 0.16);
+    --pill-fg: #7ffaed;
+    --pill-border: rgba(20, 184, 166, 0.42);
+    --pill-bg-hover: rgba(20, 184, 166, 0.28);
+}
+
+.tag--nodejs {
+  --pill-bg: rgba(4, 120, 87, 0.16);
+    --pill-fg: #2affc3;
+    --pill-border: rgba(4, 120, 87, 0.42);
+    --pill-bg-hover: rgba(4, 120, 87, 0.28);
+}
+
+.tag--selenium {
+  --pill-bg: rgba(154, 52, 18, 0.16);
+    --pill-fg: #f88762;
+    --pill-border: rgba(154, 52, 18, 0.42);
+    --pill-bg-hover: rgba(154, 52, 18, 0.28);
+}
+
+.tag--jest {
+  --pill-bg: rgba(159, 18, 57, 0.16);
+    --pill-fg: #f8668f;
+    --pill-border: rgba(159, 18, 57, 0.42);
+    --pill-bg-hover: rgba(159, 18, 57, 0.28);
+}
+
+.tag--postman {
+  --pill-bg: rgba(194, 65, 12, 0.16);
+    --pill-fg: #ffa27c;
+    --pill-border: rgba(194, 65, 12, 0.42);
+    --pill-bg-hover: rgba(194, 65, 12, 0.28);
+}
+
+.tag--default {
+  --pill-bg: rgba(234, 88, 12, 0.16);
+    --pill-fg: #ffb58f;
+    --pill-border: rgba(234, 88, 12, 0.42);
+    --pill-bg-hover: rgba(234, 88, 12, 0.28);
+}
+
+.skill-box {
+  background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+}
+
+.skill-box {
+  position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+}
+
+.skill-box::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--grad);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.skill-box:nth-child(3n)::before {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+.skill-box:hover {
+  transform: translateY(-4px);
+    border-color: rgba(124, 58, 237, 0.45);
+    box-shadow:
+      var(--shadow-lg),
+      0 0 28px rgba(124, 58, 237, 0.22);
+}
+
+.skill-box-title {
+  color: var(--text-strong);
+    letter-spacing: -0.01em;
+}
+
+.skill-icon-large {
+  color: var(--purple);
+}
+
+.skill-box:hover .skill-icon-large {
+  color: var(--blue);
+}
+
+.tag--excel {
+  --pill-bg: rgba(33, 163, 102, 0.16);
+    --pill-fg: #22a769;
+    --pill-border: rgba(33, 163, 102, 0.42);
+    --pill-bg-hover: rgba(33, 163, 102, 0.28);
+}
+
+.tag--powerbi {
+  --pill-bg: rgba(242, 200, 17, 0.16);
+    --pill-fg: #f2c811;
+    --pill-border: rgba(242, 200, 17, 0.42);
+    --pill-bg-hover: rgba(242, 200, 17, 0.28);
+}
+
+.tag--tableau {
+  --pill-bg: rgba(233, 118, 39, 0.16);
+    --pill-fg: #e97627;
+    --pill-border: rgba(233, 118, 39, 0.42);
+    --pill-bg-hover: rgba(233, 118, 39, 0.28);
+}
+
+.tag--pandas {
+  --pill-bg: rgba(155, 89, 208, 0.16);
+    --pill-fg: #ae79d9;
+    --pill-border: rgba(155, 89, 208, 0.42);
+    --pill-bg-hover: rgba(155, 89, 208, 0.28);
+}
+
+.tag--numpy {
+  --pill-bg: rgba(77, 171, 207, 0.16);
+    --pill-fg: #4dabcf;
+    --pill-border: rgba(77, 171, 207, 0.42);
+    --pill-bg-hover: rgba(77, 171, 207, 0.28);
+}
+
+.tag--matplotlib {
+  --pill-bg: rgba(42, 127, 184, 0.16);
+    --pill-fg: #3d97d3;
+    --pill-border: rgba(42, 127, 184, 0.42);
+    --pill-bg-hover: rgba(42, 127, 184, 0.28);
+}
+
+.tag--plotly {
+  --pill-bg: rgba(99, 110, 250, 0.16);
+    --pill-fg: #7c85fb;
+    --pill-border: rgba(99, 110, 250, 0.42);
+    --pill-bg-hover: rgba(99, 110, 250, 0.28);
+}
+
+.tag--statistics {
+  --pill-bg: rgba(20, 184, 166, 0.16);
+    --pill-fg: #14b8a6;
+    --pill-border: rgba(20, 184, 166, 0.42);
+    --pill-bg-hover: rgba(20, 184, 166, 0.28);
+}
+
+.tag--datacleaning {
+  --pill-bg: rgba(16, 185, 129, 0.16);
+    --pill-fg: #10b981;
+    --pill-border: rgba(16, 185, 129, 0.42);
+    --pill-bg-hover: rgba(16, 185, 129, 0.28);
+}
+
+.tag--eda {
+  --pill-bg: rgba(6, 182, 212, 0.16);
+    --pill-fg: #06b6d4;
+    --pill-border: rgba(6, 182, 212, 0.42);
+    --pill-bg-hover: rgba(6, 182, 212, 0.28);
+}
+
+.tag--dataviz {
+  --pill-bg: rgba(14, 165, 233, 0.16);
+    --pill-fg: #0ea5e9;
+    --pill-border: rgba(14, 165, 233, 0.42);
+    --pill-bg-hover: rgba(14, 165, 233, 0.28);
+}
+
+.tag--kpi {
+  --pill-bg: rgba(245, 158, 11, 0.16);
+    --pill-fg: #f59e0b;
+    --pill-border: rgba(245, 158, 11, 0.42);
+    --pill-bg-hover: rgba(245, 158, 11, 0.28);
+}
+
+.tag--flask {
+  --pill-bg: rgba(148, 163, 184, 0.16);
+    --pill-fg: #94a3b8;
+    --pill-border: rgba(148, 163, 184, 0.42);
+    --pill-bg-hover: rgba(148, 163, 184, 0.28);
+}
+
+.tag--restapi {
+  --pill-bg: rgba(139, 92, 246, 0.16);
+    --pill-fg: #a079f8;
+    --pill-border: rgba(139, 92, 246, 0.42);
+    --pill-bg-hover: rgba(139, 92, 246, 0.28);
+}
+
+.tag--manualtesting {
+  --pill-bg: rgba(244, 63, 94, 0.16);
+    --pill-fg: #f55772;
+    --pill-border: rgba(244, 63, 94, 0.42);
+    --pill-bg-hover: rgba(244, 63, 94, 0.28);
+}
+
+.tag--usabilitytesting {
+  --pill-bg: rgba(236, 72, 153, 0.16);
+    --pill-fg: #ee5aa3;
+    --pill-border: rgba(236, 72, 153, 0.42);
+    --pill-bg-hover: rgba(236, 72, 153, 0.28);
+}
+
+.tag--testcase {
+  --pill-bg: rgba(132, 204, 22, 0.16);
+    --pill-fg: #84cc16;
+    --pill-border: rgba(132, 204, 22, 0.42);
+    --pill-bg-hover: rgba(132, 204, 22, 0.28);
+}
+
+.tag--bugreporting {
+  --pill-bg: rgba(239, 68, 68, 0.16);
+    --pill-fg: #f16060;
+    --pill-border: rgba(239, 68, 68, 0.42);
+    --pill-bg-hover: rgba(239, 68, 68, 0.28);
+}
+
+.tag--jira {
+  --pill-bg: rgba(38, 132, 255, 0.16);
+    --pill-fg: #4092ff;
+    --pill-border: rgba(38, 132, 255, 0.42);
+    --pill-bg-hover: rgba(38, 132, 255, 0.28);
+}
+
+.tag--sdlc {
+  --pill-bg: rgba(99, 102, 241, 0.16);
+    --pill-fg: #8486f4;
+    --pill-border: rgba(99, 102, 241, 0.42);
+    --pill-bg-hover: rgba(99, 102, 241, 0.28);
+}
+
+.tag--stlc {
+  --pill-bg: rgba(168, 85, 247, 0.16);
+    --pill-fg: #b772f8;
+    --pill-border: rgba(168, 85, 247, 0.42);
+    --pill-bg-hover: rgba(168, 85, 247, 0.28);
+}
+
+.tag--uidesign {
+  --pill-bg: rgba(217, 70, 239, 0.16);
+    --pill-fg: #dd59f1;
+    --pill-border: rgba(217, 70, 239, 0.42);
+    --pill-bg-hover: rgba(217, 70, 239, 0.28);
+}
+
+.tag--designthinking {
+  --pill-bg: rgba(251, 191, 36, 0.16);
+    --pill-fg: #fbbf24;
+    --pill-border: rgba(251, 191, 36, 0.42);
+    --pill-bg-hover: rgba(251, 191, 36, 0.28);
+}
+
+.tag--adobexd {
+  --pill-bg: rgba(255, 97, 246, 0.16);
+    --pill-fg: #ff61f6;
+    --pill-border: rgba(255, 97, 246, 0.42);
+    --pill-bg-hover: rgba(255, 97, 246, 0.28);
+}
+
+/* ----------------------------------------------------------
+   Responsive — these come last so they are not defeated by the
+   unconditional rules above. Media queries add no specificity.
+   ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .skills-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-box {
+    grid-column: span 1;
+  }
+
+  .skill-box:nth-child(7),
+  .skill-box:nth-child(8) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-box {
+    padding: 1.5rem;
+  }
+
+  .skill-box:hover {
+    transform: translateY(-2px);
+  }
+
+  .skill-icon-large {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid,
+  .skills-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-box {
+    grid-column: 1 / -1;
+  }
+
+  .skill-box:nth-child(7),
+  .skill-box:nth-child(8) {
+    grid-column: 1 / -1;
+  }
+}

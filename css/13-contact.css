@@ -1,0 +1,372 @@
+#contact {
+  margin-bottom: 8rem;
+}
+
+.contact-container-compact {
+  max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+  font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+  
+    color: #5f5f5f;
+    opacity: 1;
+}
+
+.contact-grid {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.contact-card {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    min-height: 180px;
+    background: var(--white);
+    border: var(--border-width) solid var(--border);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    color: var(--text);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    transform-origin: center center;
+}
+
+.contact-card::before {
+  content: "";
+    position: absolute;
+    top: -12px;
+    right: 5px;
+    width: 70px;
+    height: 30px;
+    background: rgba(255, 217, 61, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    pointer-events: none;
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:nth-child(1)::before {
+  transform: rotate(15deg);
+}
+
+.contact-card:nth-child(2)::before {
+  transform: rotate(15deg);
+}
+
+.contact-card:nth-child(1):hover::before {
+  transform: rotate(17deg) translateY(10px);
+}
+
+.contact-card:nth-child(2):hover::before {
+  transform: rotate(14deg) translateY(10px);
+}
+
+.contact-card::after {
+  content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 50px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:nth-child(1):hover::after {
+  transform: rotate(2deg) translateY(10px);
+}
+
+.contact-card:nth-child(2):hover::after {
+  transform: rotate(-1deg) translateY(10px);
+}
+
+.contact-card:nth-child(1) {
+  background: var(--surface);
+    transform: none;
+}
+
+.contact-card:nth-child(2) {
+  background: var(--surface);
+    transform: none;
+}
+
+.contact-card:hover {
+  transform: rotate(0deg) translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+}
+
+.contact-card i {
+  font-size: 2.5rem;
+    color: var(--text);
+    margin-top: 1rem;
+}
+
+.contact-card:hover i {
+  color: var(--text);
+    transform: rotate(-5deg);
+}
+
+.contact-card span {
+  font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: 0.5px;
+}
+
+.contact-card {
+  background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+}
+
+.contact-intro {
+  color: var(--text-muted);
+    opacity: 1;
+}
+
+.contact-card {
+  position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+    border-color: rgba(124, 58, 237, 0.45);
+    box-shadow:
+      var(--shadow-lg),
+      0 0 28px rgba(124, 58, 237, 0.22);
+}
+
+.contact-card span {
+  color: var(--text-strong);
+}
+
+.contact-card i {
+  color: var(--purple);
+}
+
+.contact-card:hover i {
+  color: var(--blue);
+}
+
+.contact-card.linkedin {
+  border-color: rgba(124, 58, 237, 0.6);
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.45),
+      0 0 30px rgba(124, 58, 237, 0.18);
+}
+
+.contact-card.linkedin i {
+  color: #a78bfa;
+}
+
+.contact-card.linkedin:hover {
+  border-color: #7c3aed;
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(124, 58, 237, 0.35);
+}
+
+.contact-card.gmail {
+  border-color: rgba(59, 130, 246, 0.6);
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.45),
+      0 0 30px rgba(59, 130, 246, 0.18);
+}
+
+.contact-card.gmail i {
+  color: #60a5fa;
+}
+
+.contact-card.gmail:hover {
+  border-color: #3b82f6;
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(59, 130, 246, 0.35);
+}
+
+.contact-card.linkedin {
+  --accent: #7c3aed;
+    --glow: rgba(124, 58, 237, 0.3);
+}
+
+.contact-card.gmail {
+  --accent: #3b82f6;
+    --glow: rgba(59, 130, 246, 0.3);
+}
+
+.contact-card {
+  width: 220px;
+    height: 180px;
+    min-height: 0;
+    padding: 2rem 1.5rem;
+    gap: 0;
+    background: linear-gradient(
+      145deg,
+      rgba(30, 41, 59, 0.55),
+      rgba(13, 17, 23, 0.95)
+    );
+    border: 1px solid var(--accent);
+    border-radius: 18px;
+    overflow: visible;
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.45),
+      0 0 18px var(--glow);
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+}
+
+.contact-card::before,
+.contact-card::after {
+  content: none;
+}
+
+.contact-card i,
+.contact-card.linkedin i,
+.contact-card.gmail i {
+  width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 28px;
+    color: #ffffff;
+    border: 2px solid var(--accent);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.06),
+      rgba(13, 17, 23, 0.8)
+    );
+    box-shadow: 0 0 15px var(--glow);
+    transition: all 0.35s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-card span {
+  margin: 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-card:hover,
+.contact-card.linkedin:hover,
+.contact-card.gmail:hover {
+  transform: none;
+    border-color: var(--accent);
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.5),
+      0 0 18px var(--glow);
+}
+
+.contact-card:hover i {
+  transform: none;
+    color: #ffffff;
+    box-shadow:
+      0 0 12px var(--accent),
+      inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* ----------------------------------------------------------
+   Responsive — these come last so they are not defeated by the
+   unconditional rules above. Media queries add no specificity.
+   ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+    min-height: 160px;
+  }
+
+  .contact-card::before {
+    width: 55px;
+    height: 24px;
+    top: -10px;
+    right: 5px;
+  }
+
+  .contact-card::after {
+    width: 40px;
+    right: 5px;
+    top: 3px;
+  }
+
+  .contact-card:nth-child(1):hover::before {
+    transform: rotate(17deg) translateY(10px);
+  }
+
+  .contact-card:nth-child(2):hover::before {
+    transform: rotate(14deg) translateY(10px);
+  }
+
+  .contact-card:nth-child(1):hover::after {
+    transform: rotate(2deg) translateY(10px);
+  }
+
+  .contact-card:nth-child(2):hover::after {
+    transform: rotate(-1deg) translateY(10px);
+  }
+
+  .contact-card i {
+    font-size: 2rem;
+  }
+
+  .contact-card span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-card {
+    width: 100%;
+  }
+}

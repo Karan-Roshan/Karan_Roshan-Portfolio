@@ -1,0 +1,258 @@
+.nav-brand,
+.nav-link,
+.nav-cta {
+  font-family: var(--font-display);
+}
+
+.navbar {
+  background: var(--yellow);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    position: sticky;
+    top: 15px;
+    margin: 15px 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar.navbar-hidden {
+  transform: translateY(-120%);
+}
+
+.nav-content {
+  max-width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    background: var(--cyan);
+    border: var(--border-width) solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.nav-brand:hover {
+  transform: translateY(-2px);
+    box-shadow: 0 0 0 var(--border);
+}
+
+.nav-right {
+  display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+  padding: 0;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-link::after {
+  content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--red-soft);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  color: var(--border);
+}
+
+.nav-link.active {
+  color: var(--border);
+}
+
+.nav-cta {
+  padding: 0.5rem 1rem;
+    background: var(--cyan);
+    border: var(--border-width) solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+    box-shadow: 0 0 0 var(--border);
+}
+
+.footer-nav-compact {
+  display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav-compact a {
+  color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.footer-nav-compact a:hover {
+  opacity: 1;
+    color: var(--primary);
+}
+
+.navbar {
+  background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+}
+
+.navbar {
+  background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(12px);
+  
+    border: 1px solid #8b5cf6;
+    border-radius: 16px;
+    box-shadow:
+      0 0 0 1px rgba(139, 92, 246, 0.12),
+      0 8px 30px rgba(0, 0, 0, 0.55),
+      0 0 26px rgba(124, 58, 237, 0.12);
+}
+
+.nav-brand {
+  background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.nav-brand {
+  border: 2px solid #8b5cf6;
+    border-radius: 12px;
+    padding: 0.35rem 0.7rem;
+    box-shadow:
+      inset 0 0 0 999px rgba(124, 58, 237, 0.08),
+      0 0 0 1px rgba(139, 92, 246, 0.15),
+      0 0 16px rgba(124, 58, 237, 0.22);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+}
+
+.nav-brand:hover {
+  border-color: #a78bfa;
+    box-shadow:
+      inset 0 0 0 999px rgba(124, 58, 237, 0.16),
+      0 0 0 1px rgba(167, 139, 250, 0.3),
+      0 0 24px rgba(124, 58, 237, 0.4);
+    transform: translateY(-1px);
+}
+
+.nav-cta {
+  background: var(--grad);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--glow);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+    box-shadow:
+      var(--glow),
+      var(--shadow-lg);
+}
+
+.nav-link {
+  color: var(--text-strong);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #c4b5fd;
+}
+
+.nav-link::after {
+  background: var(--grad);
+}
+
+.footer-nav-compact a {
+  color: var(--text-muted);
+}
+
+.footer-nav-compact a:hover {
+  color: var(--text-strong);
+}
+
+/* ----------------------------------------------------------
+   Responsive — these come last so they are not defeated by the
+   unconditional rules above. Media queries add no specificity.
+   ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-right {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .navbar {
+    margin: 10px 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-nav-compact {
+    gap: 1rem;
+  }
+
+  .footer-nav-compact a {
+    font-size: 0.85rem;
+  }
+}

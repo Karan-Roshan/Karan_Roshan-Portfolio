@@ -1,0 +1,210 @@
+.profile-card {
+  width: 250px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: linear-gradient(
+      145deg,
+      rgba(30, 41, 59, 0.55),
+      rgba(13, 17, 23, 0.95)
+    );
+  
+    border: 1px solid var(--accent);
+    border-radius: 18px;
+    overflow: hidden;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+}
+
+.profile-icon {
+  width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 42px;
+    border: 2px solid var(--accent);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.06),
+      rgba(13, 17, 23, 0.8)
+    );
+    box-shadow: 0 0 15px var(--glow);
+    transition: all 0.35s ease;
+}
+
+.profile-icon img[src*="simple-icons"] {
+  filter: brightness(0) invert(1);
+}
+
+.profile-icon img {
+  object-fit: contain;
+}
+
+.profile-card h3 {
+  margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f8fafc;
+    text-align: center;
+}
+
+.card-line {
+  width: 150px;
+    height: 3px;
+    border-radius: 20px;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    position: relative;
+}
+
+.card-line::after {
+  content: "";
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+.profile-card:hover {
+  transform: translateY(-10px) scale(0.3);
+    border-color: var(--accent);
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.5),
+      0 0 30px var(--glow);
+}
+
+.profile-card:hover .profile-icon {
+  transform: scale(0.5);
+    box-shadow:
+      0 0 25px var(--accent),
+      inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.profile-card.github {
+  --accent: #3b82f6;
+    --glow: rgba(59, 130, 246, 0.3);
+}
+
+.profile-card.leetcode {
+  --accent: #a855f7;
+    --glow: rgba(168, 85, 247, 0.3);
+}
+
+.profile-card.geeks {
+  --accent: #06b6d4;
+    --glow: rgba(6, 182, 212, 0.3);
+}
+
+.profile-card.code360 {
+  --accent: #f59e0b;
+    --glow: rgba(245, 158, 11, 0.3);
+}
+
+.profile-card {
+  overflow: visible;
+}
+
+.profile-icon,
+.profile-card h3,
+.card-line {
+  position: relative;
+    z-index: 2;
+}
+
+.profile-card {
+  width: 220px;
+    height: 180px;
+    padding: 2rem 1.5rem;
+}
+
+.profile-icon {
+  width: 64px;
+    height: 64px;
+    font-size: 28px;
+}
+
+.profile-icon img {
+  width: 30px;
+    height: 30px;
+}
+
+.profile-card h3 {
+  margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.card-line {
+  width: 80px;
+    height: 1px;
+    box-shadow: 0 0 6px var(--accent);
+}
+
+.card-line::after {
+  right: -2px;
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 0 5px var(--accent);
+}
+
+.profile-card:hover {
+  transform: none;
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.5),
+      0 0 14px var(--glow),
+      0 0 20px var(--glow),
+      0 0 30px var(--glow);
+}
+
+.profile-card:hover .profile-icon {
+  transform: none;
+    box-shadow:
+      0 0 12px var(--accent),
+      inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* ----------------------------------------------------------
+   Responsive — these come last so they are not defeated by the
+   unconditional rules above. Media queries add no specificity.
+   ---------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .profile-card {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile-card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile-card {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile-card {
+    width: 220px;
+  }
+}

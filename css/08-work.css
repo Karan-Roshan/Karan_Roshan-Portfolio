@@ -1,0 +1,612 @@
+.work-list {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  
+    max-width: 100%;
+  
+    padding-top: 2rem;
+}
+
+.work-card {
+  position: relative;
+  
+    padding-left: 2.5rem;
+  
+    margin-left: calc(var(--work-rail) + 2.25rem);
+  
+    width: 75%;
+    max-width: calc(100% - var(--work-rail) - 2.25rem);
+  
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+}
+
+.work-dot {
+  position: absolute;
+    left: -2.25rem;
+    top: 2rem;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 1px solid var(--border);
+    z-index: 2;
+  
+    transition: transform 0.2s ease;
+}
+
+.work-card:not(:last-child)::after {
+  content: "";
+    position: absolute;
+    left: -2.25rem;
+    top: calc(2rem + 10px);
+    height: calc(100% + 1.5rem);
+    width: 4px;
+    transform: translateX(-50%);
+    background-image: radial-gradient(
+      circle,
+      var(--border) 0 1.8px,
+      transparent 2px
+    );
+    background-size: 4px 14px;
+    background-repeat: repeat-y;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.work-card::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: var(--accent);
+}
+
+.work-card:nth-child(4n + 2)::before {
+  background: var(--blue);
+}
+
+.work-card:nth-child(4n + 3)::before {
+  background: var(--pink-light);
+}
+
+.work-card:nth-child(4n + 4)::before {
+  background: var(--cyan);
+}
+
+.work-card:hover {
+  transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+.work-card:hover .work-dot,
+.work-card:hover:not(:last-child)::after {
+  transform: translateX(-50%) translate(2px, 2px);
+}
+
+.work-card-header {
+  display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.work-card-heading {
+  min-width: 0;
+}
+
+.work-role {
+  font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.work-company {
+  font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.work-card-meta {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.work-duration {
+  font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.75;
+    white-space: nowrap;
+}
+
+.work-type {
+  display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.work-card .timeline-description {
+  margin-bottom: 0;
+}
+
+.work-card .timeline-location {
+  margin-top: 0.75rem;
+}
+
+.work-card[data-country] {
+  cursor: pointer;
+}
+
+.work-card {
+  background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+}
+
+.work-role {
+  color: var(--text-strong);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.work-company,
+.work-duration {
+  color: var(--text-muted);
+    opacity: 1;
+}
+
+.work-card::before {
+  background: var(--grad);
+}
+
+.work-dot {
+  border-color: var(--border-strong);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+.work-type {
+  background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    box-shadow: none;
+}
+
+.work-card:not(:last-child)::after {
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.35) 0 1.8px,
+      transparent 2px
+    );
+}
+
+.work-dot {
+  background: var(--grad);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.work-card::before {
+  background: var(--grad);
+}
+
+.work-dot {
+  width: 7px;
+    height: 7px;
+    top: calc(2rem + 7.5px);
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    z-index: 2;
+    box-shadow:
+      0 0 0 3px var(--dot-colour),
+      0 0 0 6px #0d1117,
+  
+      0 0 0 8.5px var(--dot-colour),
+      0 0 22px var(--dot-glow);
+}
+
+.work-card:not(:last-child)::after {
+  top: calc(2rem + 11px);
+    height: calc(100% + 1.5rem - 1px);
+}
+
+.work-dot {
+  --dot-colour: var(--accent);
+    --dot-glow: rgba(16, 185, 129, 0.5);
+}
+
+.work-card:nth-child(4n + 2) .work-dot {
+  --dot-colour: var(--blue);
+    --dot-glow: rgba(59, 130, 246, 0.5);
+}
+
+.work-card:nth-child(4n + 3) .work-dot {
+  --dot-colour: var(--pink-light);
+    --dot-glow: rgba(236, 72, 153, 0.5);
+}
+
+.work-card:nth-child(4n + 4) .work-dot {
+  --dot-colour: var(--cyan);
+    --dot-glow: rgba(6, 182, 212, 0.5);
+}
+
+.work-card:nth-child(4n + 1)::before {
+  background: var(--purple);
+}
+
+.work-card:nth-child(4n + 1) .work-dot {
+  --dot-colour: var(--purple);
+    --dot-glow: rgba(124, 58, 237, 0.5);
+}
+
+.work-card {
+  background: #161b22;
+    border: none;
+    border-radius: 20px;
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.45),
+      0 0 20px rgba(124, 58, 237, 0.2),
+      0 0 50px rgba(124, 58, 237, 0.08);
+}
+
+.work-card:hover {
+  transform: translate(-2px, -2px);
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.5),
+      0 0 28px rgba(124, 58, 237, 0.3),
+      0 0 60px rgba(124, 58, 237, 0.12);
+}
+
+.work-card::before {
+  border-radius: 20px 0 0 20px;
+}
+
+.work-card {
+  --card-accent: #7c3aed;
+    --card-accent-text: #a78bfa;
+    --card-accent-rgb: 124, 58, 237;
+}
+
+.work-card:nth-child(4n + 2) {
+  --card-accent: #3b82f6;
+    --card-accent-text: #60a5fa;
+    --card-accent-rgb: 59, 130, 246;
+}
+
+.work-card:nth-child(4n + 3) {
+  --card-accent: #ec4899;
+    --card-accent-text: #f9a8d4;
+    --card-accent-rgb: 236, 72, 153;
+}
+
+.work-card:nth-child(4n + 4) {
+  --card-accent: #06b6d4;
+    --card-accent-text: #67e8f9;
+    --card-accent-rgb: 6, 182, 212;
+}
+
+.work-card::before,
+.work-card:nth-child(4n + 1)::before,
+.work-card:nth-child(4n + 2)::before,
+.work-card:nth-child(4n + 3)::before,
+.work-card:nth-child(4n + 4)::before {
+  background: var(--card-accent);
+}
+
+.work-card .work-dot {
+  --dot-colour: var(--card-accent);
+    --dot-glow: rgba(var(--card-accent-rgb), 0.5);
+}
+
+.work-company {
+  color: var(--card-accent-text);
+    opacity: 1;
+}
+
+.work-type {
+  color: var(--card-accent-text);
+    border-color: var(--card-accent);
+    background: rgba(var(--card-accent-rgb), 0.12);
+}
+
+.work-company {
+  position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.work-company::after {
+  content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  
+    width: 52px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--card-accent);
+    box-shadow: 0 0 10px rgba(var(--card-accent-rgb), 0.5);
+}
+
+.work-card {
+  --card-accent-dark: #4c1d95;
+}
+
+.work-card:nth-child(4n + 2) {
+  --card-accent-dark: #1e40af;
+}
+
+.work-card:nth-child(4n + 3) {
+  --card-accent-dark: #9d174d;
+}
+
+.work-card:nth-child(4n + 4) {
+  --card-accent-dark: #0e7490;
+}
+
+.work-card::before,
+.work-card:nth-child(4n + 1)::before,
+.work-card:nth-child(4n + 2)::before,
+.work-card:nth-child(4n + 3)::before,
+.work-card:nth-child(4n + 4)::before {
+  background: linear-gradient(
+      180deg,
+      var(--card-accent-dark) 0%,
+      var(--card-accent) 55%,
+      var(--card-accent-text) 100%
+    );
+}
+
+.work-card {
+  box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.45),
+      0 0 20px rgba(var(--card-accent-rgb), 0.2),
+      0 0 50px rgba(var(--card-accent-rgb), 0.08);
+}
+
+.work-card:hover {
+  box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.5),
+      0 0 28px rgba(var(--card-accent-rgb), 0.32),
+      0 0 60px rgba(var(--card-accent-rgb), 0.14);
+}
+
+.work-card {
+  border: 2px solid transparent;
+    border-radius: 20px;
+    background:
+      linear-gradient(#161b22, #161b22) padding-box,
+      linear-gradient(
+          180deg,
+          var(--card-accent-dark) 0%,
+          var(--card-accent) 55%,
+          var(--card-accent-text) 100%
+        )
+        border-box;
+}
+
+.work-card::before {
+  border-radius: 18px 0 0 18px;
+}
+
+.work-card {
+  touch-action: manipulation;
+}
+
+.work-points {
+  margin: 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.work-points li {
+  margin-bottom: 0.6rem;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.work-points li:last-child {
+  margin-bottom: 0;
+}
+
+.work-points li::marker {
+  color: var(--card-accent);
+    font-size: 1.1em;
+}
+
+.work-points li b,
+.work-points li strong {
+  color: var(--card-accent-text);
+    font-weight: 600;
+}
+
+.work-list {
+  max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  
+    padding-right: 0.9rem;
+  
+    overscroll-behavior-y: auto;
+  
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 14px,
+      #000 calc(100% - 44px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 14px,
+      #000 calc(100% - 44px),
+      transparent 100%
+    );
+}
+
+.work-card::before {
+  display: none;
+}
+
+.work-card {
+  background:
+  
+      linear-gradient(
+          180deg,
+          var(--card-accent-dark) 0%,
+          var(--card-accent) 55%,
+          var(--card-accent-text) 100%
+        )
+        padding-box,
+       linear-gradient(#161b22, #161b22)
+        padding-box,
+  
+        linear-gradient(
+          180deg,
+          var(--card-accent-dark) 0%,
+          var(--card-accent) 55%,
+          var(--card-accent-text) 100%
+        )
+        border-box;
+    background-size:
+      10px 100%,
+      auto,
+      auto;
+    background-position:
+      left top,
+      0 0,
+      0 0;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+/* ----------------------------------------------------------
+   Responsive — these come last so they are not defeated by the
+   unconditional rules above. Media queries add no specificity.
+   ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .work-list {
+    gap: 1.25rem;
+  }
+
+  .work-card {
+    padding-left: 1.75rem;
+    margin-left: 2.5rem;
+    width: auto;
+  }
+
+  .work-card::before {
+    width: 7px;
+  }
+
+  .work-card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .work-card-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: left;
+  }
+
+  .work-role {
+    font-size: 1.1rem;
+  }
+
+  .work-dot {
+    left: -1.5rem;
+    top: 1.6rem;
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+  }
+
+  .work-card:not(:last-child)::after {
+    left: -1.5rem;
+    top: calc(1.6rem + 8px);
+    height: calc(100% + 1.25rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .work-dot {
+    top: calc(1.6rem + 5px);
+    width: 6px;
+    height: 6px;
+    border: none;
+    box-shadow:
+          0 0 0 2.5px var(--dot-colour),
+          0 0 0 5px #0d1117,
+          0 0 0 7px var(--dot-colour),
+          0 0 16px var(--dot-glow);
+  }
+}
+
+@media (max-height: 700px) {
+  .work-list {
+    max-height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-list {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    background-size:
+          7px 100%,
+          auto,
+          auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* The desktop layout indents cards by 15% for the dotted rail and then caps
+     them at 75% wide. On a tablet that left almost nothing for the text, so the
+     rail narrows and the cards take the remaining width. */
+  .work-card {
+    margin-left: 3.5rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .work-list {
+    max-height: 60vh;
+  }
+}
